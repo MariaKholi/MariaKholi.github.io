@@ -1,3 +1,8 @@
+---
+layout: default
+comments: true
+# other options
+---
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -26,7 +31,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   I wanted to start by telling why I created this blog,
    (Because i have to :D)
 baseurl: "Maria/blog" # the subpath of your site, e.g. /blog
-url: "http://MariaKholi.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Maria_Kholi
 github_username:  mk22pd
 
@@ -34,6 +39,8 @@ github_username:  mk22pd
 theme: minima
 plugins:
   - jekyll-feed
+  disqus:
+    shortname: mariakholi
 
 # Exclude from processing.
 # The following items will not be processed, by default.
