@@ -23,19 +23,16 @@ comments: true
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Welcome to my blog
+title: My blog
 email: mk22pd@studen.lnu.se
 description: >- # this means to ignore newlines until "baseurl:"
-   My name is Maria Kholi and I am excited to share with you about my life!
-  I have alot of thoughts whirling around in my head and ready to jump out.
-  I wanted to start by telling why I created this blog,
-   (Because i have to :D)
-baseurl: "Maria/blog" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Maria_Kholi
 github_username:  mk22pd
 
 # Build settings
+markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
