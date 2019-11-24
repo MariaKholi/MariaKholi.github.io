@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
 
-  {%- include head.html -%}
+<html>
 
-  <body>
+{% include head.html %}
 
-    {%- include header.html -%}
+<body>
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
+  <!--Containing wrap-->
 
-    {%- include footer.html -%}
+  <div id="big_wrap">
 
-  </body>
+      {% include header.html %}
+
+        <div class="page-content">
+
+          <div class="wrapper">
+
+            {{ content }}
+
+          </div>
+
+        </div>
+
+{% include footer.html %}
+
+  </div>
+
+  <!--DISQUS SCRIPT LEAVE BE-->
+
+  <script id="dsq-count-scr" src="//adevstudentsquest.disqus.com/count.js" async></script>
+
+</body>
 
 </html>
