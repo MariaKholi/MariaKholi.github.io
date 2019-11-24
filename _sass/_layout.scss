@@ -1,6 +1,4 @@
-/**
- * Site header
- */
+
 .site-header {
   border-top: 5px solid $grey-color-dark;
   border-bottom: 1px solid $grey-color-light;
@@ -40,10 +38,6 @@
     color: $text-color;
     line-height: $base-line-height;
 
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
   }
 
   @include media-query($on-palm) {
@@ -51,7 +45,7 @@
     top: 9px;
     right: $spacing-unit / 2;
     background-color: $background-color;
-    border: 1px solid $grey-color-light;
+    border: 1px solid $brown-color-light;
     border-radius: 5px;
     text-align: right;
 
@@ -100,13 +94,8 @@
   }
 }
 
-
-
-/**
- * Site footer
- */
 .site-footer {
-  border-top: 1px solid $grey-color-light;
+  border-top: 1px solid $sandyBrown-color-light;
   padding: $spacing-unit 0;
 }
 
@@ -123,7 +112,7 @@
 
 .footer-col-wrapper {
   @include relative-font-size(0.9375);
-  color: $grey-color;
+  color: $sandyBrown-color;
   margin-left: -$spacing-unit / 2;
   @extend %clearfix;
 }
@@ -171,10 +160,6 @@
 }
 
 
-
-/**
- * Page content
- */
 .page-content {
   padding: $spacing-unit 0;
   flex: 1;
@@ -207,11 +192,6 @@
   @include relative-font-size(1.5);
 }
 
-
-
-/**
- * Posts
- */
 .post-header {
   margin-bottom: $spacing-unit;
 }

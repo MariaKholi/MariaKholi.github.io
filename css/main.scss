@@ -1,0 +1,201 @@
+---
+
+# Only the main Sass file needs front matter (the dashes are enough)
+
+---
+
+@charset "utf-8";
+
+
+
+@import url(https://fonts.googleapis.com/css?family=Dancing+Script);
+
+
+
+//-------------------------------------------- COLORS --------------------------------------------//
+
+
+
+// Blacks and whites:
+
+$color-black: #000000;
+
+$color-white: #ffffff;
+
+
+
+// Greys:
+
+$grey-color:       #828282;
+
+$grey-color-middle: #454545;
+
+$grey-color-darker: #373737;
+
+
+
+$grey-color-light: lighten($grey-color, 20%);
+
+$grey-color-dark:  darken($grey-color, 25%);
+
+
+
+//-------------------------------------------- THEME --------------------------------------------//
+
+
+
+// Theme highlight color - accent color (current hot pink):
+
+$theme-color: #df2779;
+
+$theme-color-light: lighten($theme-color, 30%);
+
+
+
+// Ordinary text-color:
+
+$text-color: #434343;
+
+
+
+// Font properties
+
+$base-font-family: Helvetica, Arial, sans-serif;
+
+$base-font-size:   1.2em;
+
+$small-font-size:  $base-font-size * 0.875;
+
+$mini-font-size: $base-font-size * 0.75;
+
+$base-line-height: 1.5;
+
+
+
+// Theme background mixin:
+
+@mixin background-props() {
+
+    background-color: $grey-color-middle;
+
+    background-repeat: repeat;
+
+    background-attachment: fixed;
+
+}
+
+
+
+//------------------------------------- MEDIA QUERY & UNITS -------------------------------------//
+
+
+
+// Media query measurements:
+
+$on-palm:          600px;
+
+$on-laptop:        800px;
+
+
+
+@mixin media-query($device) {
+
+    @media screen and (max-width: $device) {
+
+        @content;
+
+    }
+
+}
+
+
+$spacing-unit:     30px;
+
+
+@mixin hide-element() {
+
+    visibility: hidden !important;
+
+    display: none;
+
+    width: 0;
+
+    height: 0;
+
+}
+
+
+@mixin bold-upper-text() {
+
+    text-transform: uppercase;
+
+    font-weight: bold;
+
+}
+
+
+@mixin element_border($size, $color, $style) {
+
+    border: $size $style $color;
+
+}
+
+
+
+@mixin rounded($radius) {
+
+    -webkit-border-radius: $radius;
+
+    -moz-border-radius: $radius;
+
+    border-radius: $radius;
+
+}
+
+
+
+// Sets opacity on element:
+
+@mixin opacity($opacity) {
+
+    opacity: $opacity;
+
+    $opacity-ie: $opacity * 100;
+
+    filter: alpha(opacity=$opacity-ie); //IE8
+
+}
+
+
+
+// Box shadow mixin:
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+
+
+
+    -webkit-box-shadow:$top $left $blur $color #{$inset};
+
+    -moz-box-shadow:$top $left $blur $color #{$inset};
+
+    box-shadow:$top $left $blur $color #{$inset};
+
+}
+
+
+
+//---------------------------------------- PARTIALS ----------------------------------------//
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+
+@import
+
+        "base",
+
+        "layout",
+
+        "syntax-highlighting"
+
+;

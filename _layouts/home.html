@@ -3,30 +3,163 @@ layout: default
 ---
 
 <div class="home">
-  {%- if page.title -%}
-    <h1 class="page-heading">{{ page.title }}</h1>
-  {%- endif -%}
 
-  {{ content }}
+    <div class="wrap wrap-pad">
 
-  {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
-      {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
-        {%- endif -%}
-      </li>
-      {%- endfor -%}
-    </ul>
-  {%- endif -%}
+    <div class="box-3">
+
+
+
+        <!--Lists blog posts:-->
+
+        <p>All posts</p>
+
+        <div class="catblock" id="allposts">
+
+            {% for post in site.posts %}
+
+            {% if post.featured %}
+
+            {% else %}
+
+            {% assign currentdate = post.date | date: "%Y" %}
+
+            {% if currentdate != date %}
+
+            {% unless forloop.first %}</ul>{% endunless %}
+
+            <h2 id="y{{post.date | date: "%y"}}">{{ currentdate }}</h2>
+
+                <ul>
+
+                    {% assign date = currentdate %}
+
+                    {% endif %}
+
+                    <li>{{ post.date | date: "%-b %d" }}: <a href="{{ post.url }}">{{ post.title }}</a></li>
+
+                    {% if forloop.last %}
+
+                </ul>
+
+            {% endif %}
+
+            {% endif %}
+
+            {% endfor %}
+
+        </div>
+
+        <br />
+
+        <p>Posts by category</p>
+
+
+
+        <div class="catblock" id="categories">
+
+         {% for category in site.categories %}
+
+            <h2>{{ category | first }}</h2>
+
+                 <ul>
+
+                    {% for posts in category %}
+
+                      {% for post in posts %}
+
+                        {% if post.url %}
+
+                          <li>
+
+                              {{ post.date | date: "%-b %d" }}: <a href="{{ post.url }}">{{ post.title }}</a></li>
+
+                        {% endif %}
+
+                      {% endfor %}
+
+                   {% endfor %}
+
+                 </ul>
+
+         {% endfor %}
+
+        </div>
+
+    </div>
+
+        <div class="box-2">
+
+            <div class="post-preview">
+
+                <ul class="post-list">
+
+
+                    {% for post in site.posts %}
+
+                    {% if post.featured %}<li>
+
+                    <div class="post-featured-content">{{ post.content }}</div>
+
+                    </li>{% endif %}{% endfor %}
+
+
+                    {% for post in paginator.posts  %}
+
+                    {% if post.featured %}
+
+                    {% else %}
+
+                    <li>
+
+                        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+                        <h2><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
+
+                        {{ post.content | truncatewords: 50}}<br />
+
+                        <a href="{{ post.url | prepend: site.baseurl }}">Read More...</a>
+
+                    </li>
+
+                    {% endif %}
+
+                    {% endfor %}
+
+                </ul>-->
+
+            {% if paginator.total_pages > 1 %}
+
+            <div class="pagination">
+
+                 {% if paginator.previous_page %}
+
+                 <a href="{{ paginator.previous_page_path }}" class="previous">Previous</a>
+
+                {% else %}
+
+                <span class="previous">Previous</span>
+
+                {% endif %}
+
+                <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+
+                {% if paginator.next_page %}
+
+                <a href="{{ paginator.next_page_path }}" class="next">Next</a>
+
+                {% else %}
+
+                <span class="next ">Next</span>
+
+                {% endif %}
+
+            </div>{% endif %}
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
