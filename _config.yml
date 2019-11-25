@@ -1,6 +1,8 @@
 ---
 layout: default
-comments: true
+comments: true;
+---
+
 
 title: My blog
 email: mk22pd@studen.lnu.se
@@ -12,7 +14,7 @@ github_username:  mk22pd
 
 # Build settings
 markdown: kramdown
-theme: minima
+theme: _minima
 plugins:
   - jekyll-feed
   disqus:
