@@ -1,7 +1,4 @@
----
-layout: default
-comments: true;
----
+
 
 
 title: My blog
@@ -14,11 +11,11 @@ github_username:  mk22pd
 
 # Build settings
 markdown: kramdown
-theme: _minima
+theme: minima
 plugins:
   - jekyll-feed
-  disqus:
-    shortname: mariakholi
+disqus:
+  shortname: mariakholi
 
 # Exclude from processing.
 # The following items will not be processed, by default.
