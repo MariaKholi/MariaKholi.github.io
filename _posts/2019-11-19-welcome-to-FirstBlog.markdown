@@ -20,8 +20,7 @@ It reduces both time and effort when applying and maintaining the CSS.
 
 3- Which techniques have you used?
 
-I’ve used variables for my colors and font-styles. 
-I have also used mixins in order to reduce code when applying for example shadows or borders to elements.
+I’ve used variables for my colors and font-styles.
 
 4- Pros and cons?
 
