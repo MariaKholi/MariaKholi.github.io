@@ -20,7 +20,7 @@ It reduces both time and effort when applying and maintaining the CSS.
 
 3- Which techniques have you used?
 
-I’ve used variables for my colors and font-styles.
+I’ve tried to use variables for my colors and font-styles.
 
 4- Pros and cons?
 
@@ -28,3 +28,15 @@ Maybe It is efficient, time-sparing and best of all - it allows you to reuse cod
 
 5- What do you think of static site generators?
 its too complicated thought jekyll includes alot of files which has confused me alot.
+
+6-What is robots.txt and how have you configure it for your site?
+It is a file that contains the areas of a website that search engine robots are forbidden from crawling.
+
+7-What is humans.txt and how have you configure it for your site?
+It is a simple text file that we put on the root of the site to show information about the people behind the site's production and maintenance.
+
+8-How did you implements comments to blog posts?
+I have created a new html file under includes-folder with the disqus-code which i have copied from my page there in disqus-website.
+after that i have edit the configuration in the _config-yml and added :
+disqus:
+  shortname: mariakholi

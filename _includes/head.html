@@ -1,5 +1,4 @@
 <head>
-  <head>
 
     <meta charset="utf-8">
 
@@ -9,19 +8,18 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <meta name="description" content="Maria Kholi />
-
-    <meta name="keywords"  content="Web development, programming, design, code" />
-
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    {% feed_meta %}/>
 
 
-    <link rel="stylesheet" href="{{ "/assets/main.css" | prepend: site.baseurl }}">
+
+    <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
     <link rel="author" href="../humans.txt" />
 
-  <!-- Open Graph -->
+    {% include open-graph.html %}
 
   {% if page.type %}<meta content="{{ page.type }}" property="og:type">
 
